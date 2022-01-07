@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ui.main.MainFragment">
+
+
+<ImageView
+    android:src="@drawable/ibisdev"
+    android:layout_width="128dp"
+    android:layout_height="128dp"
+    android:layout_marginTop="32dp"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/ibisdev" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Code Challenge"
+    android:layout_below="@id/ibisdev"
+    android:layout_centerHorizontal="true"
+    />
+
+
+<ImageView
+    android:src="@drawable/pbf"
+    android:layout_height="wrap_content"
+    android:id="@+id/imageView2"
+    android:layout_width="200dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true" />
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
+    android:layout_centerInParent="true"
+    app:cardCornerRadius="2sp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textview_search"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input some venue that you are looking for..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/icon_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_baseline_storefront_24"
+            app:layout_constraintBottom_toBottomOf="@id/venue_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/venue_search" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/venue_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Coffee, Bar, Restaurant, etc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_place"
+            app:layout_constraintTop_toBottomOf="@id/textview_search">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/venue_search_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Search..."
+            app:layout_constraintEnd_toEndOf="@id/venue_search"
+            app:layout_constraintStart_toStartOf="@id/venue_search"
+            app:layout_constraintTop_toBottomOf="@id/venue_search" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_search"
+            android:layout_centerVertical="true"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+</RelativeLayout>
